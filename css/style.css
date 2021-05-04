@@ -21,7 +21,32 @@ header h1
     text-shadow:-8px -4px 8px black;
     
 }
-
+header img
+{
+    width: 100px;
+    display: inline;
+}
+header img:nth-child(1),img:nth-child(2),img:nth-child(3),img:nth-child(4),img:nth-child(5)
+{
+    
+    transform: rotate(-20deg);
+}
+header img:nth-child(1):hover,img:nth-child(2):hover,img:nth-child(3):hover,img:nth-child(4):hover,img:nth-child(5):hover
+{
+    transform: rotate(40deg);
+    width: 100.2px;
+}
+header img:nth-child(6),img:nth-child(7),img:nth-child(8),img:nth-child(9),img:nth-child(10),img:nth-child(11)
+{
+    
+    transform: rotate(195deg);
+}
+header img:nth-child(6):hover,img:nth-child(7):hover,img:nth-child(8):hover,img:nth-child(9):hover,img:nth-child(10):hover,img:nth-child(11):hover
+{
+    
+    transform: rotate(160deg);
+    width: 100.2px;
+}
 main nav
 {
     background-color: rgb(226, 229, 243);
@@ -60,4 +85,56 @@ main
 main img
 {
     margin-top: 25px;
+}
+
+#imagesLine
+{
+    margin: 20px auto;
+    background-image: url('../images/BumBum.png');
+    width: 100%;
+    height: 100px;
+    background-size: contain;
+    border-radius: 20px;
+    box-shadow: -4px -4px 8px 2px black;
+
+
+}
+
+
+#openHours
+{
+   background-color: rgba(255, 255, 255, 0.733);
+   padding: 1px;
+   border-radius: 20px;
+   box-shadow: 0 0 8px 2px whitesmoke;
+}
+
+#openHours p
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow:0 0 4px rgb(52, 255, 255);
+}
+
+#openHours p span
+{
+    color:rgb(52, 255, 255) ;
+    text-shadow:0 0 6px black;
+}
+
+
+footer 
+{
+    width: 98%;
+    background-color: rgb(226, 229, 243);
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+footer article p 
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 25px;
 }
