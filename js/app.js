@@ -1,15 +1,15 @@
 
 'use strict';
 //Data ==========================================
-var operationHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+let operationHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 
 
 
-var allcookieshops = [];
+let allcookieshops = [];
 //Get cookie sold to table 
-var cookieshopTable = document.getElementById('cookiesTable');
+let cookieshopTable = document.getElementById('cookiesTable');
 //Get to add shop to form
-var cookieShopForm = document.getElementById('AddStore');
+let cookieShopForm = document.getElementById('AddStore');
 //funmctionally ==================================
 //Constructor for store sales data
 function CookieShop(location, minCust, maxCust, cookiesPerSale) {
@@ -34,19 +34,19 @@ CookieShop.prototype.cookiesPerHr = function () {
 
 
 CookieShop.prototype.render = function() { 
-    var trElement = document.createElement('tr');
-    var thElement = document.createElement('th');
+    let trElement = document.createElement('tr');
+    let thElement = document.createElement('th');
     thElement.textContent = this.location;
     trElement.appendChild(thElement);
   
-    var cookiesSold = 0;
-    var totalCookiesSold = 0;
+    let cookiesSold = 0;
+    let totalCookiesSold = 0;
   
-    for (var i = 0; i < operationHour.length; i++) {
+    for (let i = 0; i < operationHour.length; i++) {
   
       cookiesSold = this.cookiesPerHr();
   
-      var tdElement = document.createElement('td');
+      let tdElement = document.createElement('td');
       tdElement.textContent = cookiesSold;
       trElement.appendChild(tdElement);
   
@@ -64,13 +64,13 @@ CookieShop.prototype.render = function() {
 
   
 function makeHeaderRow() { // Header Row Function
-    var theadElement = document.createElement('thead');
-    var trElement = document.createElement('tr');
-    var thElement = document.createElement('th');
+    let theadElement = document.createElement('thead');
+    let trElement = document.createElement('tr');
+    let thElement = document.createElement('th');
     thElement.textContent = '';
     trElement.appendChild(thElement);
   
-    for (var i = 0; i < operationHour.length; i++) {
+    for (let i = 0; i < operationHour.length; i++) {
       thElement = document.createElement('th');
       thElement.textContent = operationHour[i];
       trElement.appendChild(thElement);
@@ -87,20 +87,20 @@ function makeHeaderRow() { // Header Row Function
 
   
 function totalCookiesPerHour() { // Bottom Totals
-    var trElement = document.createElement('tr');
-    var thElement = document.createElement('th');
+    let trElement = document.createElement('tr');
+    let thElement = document.createElement('th');
     thElement.textContent = 'Totals';
     trElement.appendChild(thElement);
   
-    var grandTotalCookies = 0;
+    let grandTotalCookies = 0;
   
-    for (var i = 0; i < operationHour.length; i++) {
-      var totalCookies = 0;
-      for( var j = 0; j < allcookieshops.length; j++) {
+    for (let i = 0; i < operationHour.length; i++) {
+      let totalCookies = 0;
+      for( let j = 0; j < allcookieshops.length; j++) {
         totalCookies += allcookieshops[j].cookiesSoldPerHr[i];
         grandTotalCookies += allcookieshops[j].cookiesSoldPerHr[i];
       }
-      var tdElement = document.createElement('td');
+      let tdElement = document.createElement('td');
       tdElement.textContent = totalCookies;
       trElement.appendChild(tdElement);
   
@@ -118,7 +118,7 @@ new CookieShop('Paris', 20, 38, 2.3);
 new CookieShop('Lima', 2, 16, 4.6);
 
 function renderallcookieshops() {
-  for(var i in allcookieshops) {
+  for(let i in allcookieshops) {
     allcookieshops[i].render();
   }
 
@@ -135,12 +135,12 @@ function addNewCookieShop(event) {
     console.log
     // Get target of event 
     (event.target.shopLocation.value);
-    var newLoc = 
+    let newLoc = 
     //The parseInt() function parses a string and returns an integer.
     event.target.shopLocation.value;
-    var newMinCust = parseInt(event.target.minCust.value);
-    var newMaxCust = parseInt(event.target.maxCust.value);
-    var newCookiesPerSale = parseInt(event.target.cookiesPerSale.value);
+    let newMinCust = parseInt(event.target.minCust.value);
+    let newMaxCust = parseInt(event.target.maxCust.value);
+    let newCookiesPerSale = parseInt(event.target.cookiesPerSale.value);
   // New Keyword to call to function creates a new object
     new CookieShop(newLoc, newMinCust, newMaxCust, newCookiesPerSale);
   
