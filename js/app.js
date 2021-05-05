@@ -46,7 +46,7 @@ CookieShop.prototype.render = function() {
   
       cookiesSold = this.cookiesPerHr();
   
-      let tdElement = document.createElement('td');
+      var tdElement = document.createElement('td');
       tdElement.textContent = cookiesSold;
       trElement.appendChild(tdElement);
   
@@ -100,7 +100,7 @@ function totalCookiesPerHour() { // Bottom Totals
         totalCookies += allcookieshops[j].cookiesSoldPerHr[i];
         grandTotalCookies += allcookieshops[j].cookiesSoldPerHr[i];
       }
-      let tdElement = document.createElement('td');
+      var tdElement = document.createElement('td');
       tdElement.textContent = totalCookies;
       trElement.appendChild(tdElement);
   
@@ -135,12 +135,12 @@ function addNewCookieShop(event) {
     console.log
     // Get target of event 
     (event.target.shopLocation.value);
-    let newLoc = 
+    let newLoc = event.target.shopLocation.value;
     //The parseInt() function parses a string and returns an integer.
-    event.target.shopLocation.value;
+    
     let newMinCust = parseInt(event.target.minCust.value);
     let newMaxCust = parseInt(event.target.maxCust.value);
-    let newCookiesPerSale = parseInt(event.target.cookiesPerSale.value);
+    let  newCookiesPerSale = parseInt(event.target.cookiesPerSale.value);
   // New Keyword to call to function creates a new object
     new CookieShop(newLoc, newMinCust, newMaxCust, newCookiesPerSale);
   
