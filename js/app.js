@@ -1,4 +1,5 @@
 
+
 'use strict';
 
 // array of Hours 
@@ -193,6 +194,7 @@ function addStore(event)
     lastRowInTable();
     
 }
+
 
 
 
